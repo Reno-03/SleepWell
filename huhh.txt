@@ -4,3 +4,6 @@ es
 
 
 new changes
+
+
+bugfixes: himuan ko drawer
