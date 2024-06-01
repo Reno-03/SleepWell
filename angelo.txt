@@ -1,2 +1,8 @@
 may sakit
+<<<<<<< HEAD
 dolboyob
+=======
+
+
+another bug is fixed
+>>>>>>> f6541c013595d068f178fd4ff32435440a335ccd
