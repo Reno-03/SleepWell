@@ -10,7 +10,7 @@
 
     
     <application
-        android:label="SleepWell Debug"
+        android:label="SleepWell"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:networkSecurityConfig="@xml/network_security_config">
