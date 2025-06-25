@@ -133,39 +133,28 @@ class _StatisticsPageState extends State<StatisticsPage> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     int? userId = prefs.getInt('chosenID');
 
-    if (userId != null) {
-      Users? user = await db.getUserById(userId);
-      setState(() {
-        signedUser = user;
-      });
-    } else {
-      // Handle the case where userId is null, maybe show an error message
-      setState(() {
-        signedUser = null;
-      });
+    Users? user = await db.getUserById(userId!);
+    setState(() {
+      signedUser = user;
+    });
     }
-  }
 
   void _loadSleepRecords() async {
     int? userId = (await SharedPreferences.getInstance()).getInt('chosenID');
-    if (userId != null) {
-      sleepRecords = await dbHelper.getUserSleepRecords(userId);
-      setState(() {});
+    sleepRecords = await dbHelper.getUserSleepRecords(userId!);
+    setState(() {});
     }
-  }
 
   Future<void> _cleanupSleepRecords() async {
     int? userId = (await SharedPreferences.getInstance()).getInt('chosenID');
-    if (userId != null) {
-      await dbHelper.removeIncompleteRecords(userId);
-      _loadSleepRecords(); // Reload records after cleanup
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Incomplete records cleaned up.'),
-        ),
-      );
+    await dbHelper.removeIncompleteRecords(userId!);
+    _loadSleepRecords(); // Reload records after cleanup
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Incomplete records cleaned up.'),
+      ),
+    );
     }
-  }
 
   DateTime? _parseDateTime(String? dateTimeString) {
     if (dateTimeString == null || dateTimeString.isEmpty) {

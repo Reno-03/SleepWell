@@ -87,11 +87,6 @@ class _WelcomePageState extends State<WelcomePage> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     int? id = await db.getMaxUserId();
 
-    if (id != null) {
-      await prefs.setInt('chosenID', id);
-    } else {
-      // Handle the case where there are no users or something went wrong
-      print('No user found or error occurred while fetching the max user ID');
+    await prefs.setInt('chosenID', id!);
     }
-  }
 }

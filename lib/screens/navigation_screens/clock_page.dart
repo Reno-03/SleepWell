@@ -214,16 +214,7 @@ class _ClockPageState extends State<ClockPage> {
     print("Current time: $currentTime");
     print("Chosen ID: $chosenID");
 
-    if (chosenID == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Error: No user ID found.'),
-        ),
-      );
-      return;
-    }
-
-    List<Map<String, dynamic>> sleepRecords = await dbHelper.getUserSleepRecords(chosenID);
+    List<Map<String, dynamic>> sleepRecords = await dbHelper.getUserSleepRecords(chosenID!);
 
     print("Sleep Records: $sleepRecords");
 

@@ -31,7 +31,7 @@ class _ClockViewState extends State<ClockView> {
   //modified
   @override
   void dispose() {
-    _timer?.cancel(); // Cancel the timer
+    _timer.cancel(); // Cancel the timer
     super.dispose();
   }
   //end
