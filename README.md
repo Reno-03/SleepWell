@@ -13,6 +13,7 @@ A comprehensive cross-platform sleep tracking mobile application designed to hel
 <div align="center">
   <img src="/screenshots/demo.gif" height="400"/>
 </div>
+
 ## 🌟 Features
 
 - **User Authentication**: Secure account system for personalized sleep tracking and data management
