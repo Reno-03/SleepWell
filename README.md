@@ -10,7 +10,7 @@ A comprehensive cross-platform sleep tracking mobile application designed to hel
 
 ## 📸 Demo
 
-![SleepWell Demo](screenshots/demo.gif)
+<img src="/screenshots/demo.gif" height="250"/>
 
 ## 🌟 Features
 
