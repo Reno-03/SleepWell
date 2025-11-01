@@ -1,0 +1,5 @@
+// Copy this file to config.dart and add your API key
+// config.dart is gitignored and won't be committed to the repository
+
+const String OPENWEATHER_API_KEY = 'your_openweather_api_key_here';
+

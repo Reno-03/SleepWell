@@ -41,3 +41,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# SQLite Database
+*.db
+*.sqlite
+*.sqlite3
+sleepwell.db
+
+# Environment variables and API keys
+.env
+.env.local
+lib/config.dart

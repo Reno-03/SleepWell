@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-                            
-const OPENWEATHER_API_KEY = "36502b4b824047914c3396fee1805bd6";
+export 'config.dart'; // Export API key so it's accessible when importing consts.dart
 
 const kPrimaryColor = Color.fromARGB(255, 60, 107, 134);
 const kPrimaryColorDarker = Color.fromARGB(255, 23, 60, 82);
