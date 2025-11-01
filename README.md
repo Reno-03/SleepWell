@@ -10,7 +10,7 @@ A comprehensive cross-platform sleep tracking mobile application designed to hel
 
 ## 📸 Demo
 
-<img src="/screenshots/demo.gif" height="250"/>
+<img src="/screenshots/demo.gif" height="400"/>
 
 ## 🌟 Features
 
