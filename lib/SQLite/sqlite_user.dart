@@ -12,12 +12,11 @@ class DatabaseHelper {
   String users = 'CREATE TABLE users (userID INTEGER PRIMARY KEY AUTOINCREMENT, userName TEXT UNIQUE, userPass TEXT, emailAddress TEXT)';
   
   Future<Database> initDB() async {
-    // fetch thepath that the database will be located
-    final databasePath = await getDownloadsDirectory();
+    // Use application documents directory (more reliable on Android)
+    final databasePath = await getApplicationDocumentsDirectory();
 
     // create the full database path together with the file 
-    final path = join(databasePath!.path, databaseName);
-    print(path); // locate the file
+    final path = join(databasePath.path, databaseName);
 
     return openDatabase(
       path, 

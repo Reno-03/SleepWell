@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter_login/JsonModels/sleeping_factor.dart';
 import 'package:flutter_login/JsonModels/users_sleeping_factor.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,11 +8,11 @@ class DatabaseHelperSleepFactors {
   final databaseName = 'sleepwell.db';
 
   Future<Database> initDB() async {
-    // fetch thepath that the database will be located
-    final databasePath = await getDownloadsDirectory();
+    // Use application documents directory (more reliable on Android)
+    final databasePath = await getApplicationDocumentsDirectory();
 
     // create the full database path together with the file 
-    final path = join(databasePath!.path, databaseName);
+    final path = join(databasePath.path, databaseName);
     
 
     return await openDatabase(path);

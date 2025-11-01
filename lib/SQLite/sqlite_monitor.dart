@@ -16,7 +16,9 @@ class DatabaseHelperMonitor {
   }
 
   _initDatabase() async {
-    String path = join((await getDownloadsDirectory())!.path, 'sleepwell.db');
+    // Use application documents directory (more reliable on Android)
+    final databasePath = await getApplicationDocumentsDirectory();
+    String path = join(databasePath.path, 'sleepwell.db');
     return await openDatabase(path);
   }
 

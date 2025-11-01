@@ -10,21 +10,28 @@ import 'package:flutter_login/screens/signup.dart';
 import 'package:flutter_login/screens/welcome_page.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
+
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await AndroidAlarmManager.initialize();
+  
+  try {
+    // Initialize Android Alarm Manager
+    await AndroidAlarmManager.initialize();
 
-  const AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('@mipmap/ic_launcher');
+    // Initialize notifications with correct icon reference
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/launcher_icon');
 
-  const InitializationSettings initializationSettings =
-      InitializationSettings(android: initializationSettingsAndroid);
+    const InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
 
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-
-  WidgetsFlutterBinding.ensureInitialized();
-  await AndroidAlarmManager.initialize();
+    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  } catch (e) {
+    // Log error but continue - app can work without notifications
+    print('Error initializing notifications/alarm: $e');
+  }
   
   runApp(MainApp());
 }
