@@ -308,7 +308,7 @@ Potential features for future versions:
 
 ## 👤 Author
 
-**Reno-03**
+**Reno-03 and Rafael Antonio Uy**
 
 ---
 
